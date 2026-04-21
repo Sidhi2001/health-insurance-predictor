@@ -56,19 +56,27 @@ Medical insurance costs vary significantly across individuals based on factors l
 
 ### 3. 🤖 Model Training
 
-| Model | Notes |
-|---|---|
-| Linear Regression | Baseline |
-| Random Forest | Better with non-linearity |
-| **XGBoost** | ✅ **Best performance** |
+Five regression models were trained and compared:
 
-### 4. 📈 Evaluation
-
-| Metric | Score |
+| Model | Best Parameters |
 |---|---|
-| R² Score | ~0.80 |
-| MAE | Evaluated |
-| RMSE | Evaluated |
+| Linear Regression | — |
+| Polynomial Regression (deg 2) | — |
+| Random Forest | `max_depth=10`, `n_estimators=100`, `min_samples_split=2`, `min_samples_leaf=2` |
+| SVR | `C=50`, `kernel=linear`, `epsilon=0.1`, `degree=2` |
+| **XGBoost** | `learning_rate=0.05`, `max_depth=3`, `n_estimators=100`, `subsample=1.0` |
+
+### 4. 📈 Model Evaluation
+
+| Model | R² Score | MAE | RMSE |
+|---|---|---|---|
+| Linear Regression | 0.6545 | 5181.15 | 6895.40 |
+| Polynomial Regression (deg 2) | 0.7494 | 4321.34 | 5872.80 |
+| Random Forest | 0.7857 | 4134.58 | 5430.40 |
+| SVR | 0.4372 | 5582.50 | 8800.55 |
+| **XGBoost** ✅ | **0.7971** | **3968.18** | **5283.97** |
+
+> **XGBoost** achieved the best performance with the highest R² score and lowest MAE & RMSE, and was selected as the final model.
 
 ---
 
@@ -112,13 +120,24 @@ health-insurance-predictor/
 
 ## 🧰 Tech Stack
 
-- **Language:** Python 3.10
-- **ML Libraries:** Scikit-learn, XGBoost
-- **Web App:** Streamlit
-- **Deployment:** AWS EC2
+| Category | Tools |
+|---|---|
+| Language | Python 3.10 |
+| Data Analysis | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| ML & Preprocessing | Scikit-learn, XGBoost |
+| Encoding | LabelEncoder, StandardScaler |
+| Notebook | Jupyter Notebook |
+| Web App | Streamlit |
+| Deployment | AWS EC2 |
 
 ---
 
 ## 🙌 Acknowledgements
 
 Dataset sourced from the [Medical Cost Personal Dataset](https://www.kaggle.com/datasets/mirichoi0218/insurance) on Kaggle.
+
+
+AWS : 
+
+http://16.171.37.12:8501/
