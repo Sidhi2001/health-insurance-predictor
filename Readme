@@ -1,101 +1,62 @@
-# 🏥 Health Insurance Cost Predictor (End-to-End ML + AWS Deployment)
+# 🏥 Health Insurance Cost Predictor
 
-This project is a complete **end-to-end Machine Learning system** that predicts health insurance costs based on user attributes such as age, BMI, smoking status, number of children, and more.
+An end-to-end Machine Learning project that predicts health insurance charges based on user details such as age, BMI, smoking status, and more.
 
-It includes the full Data Science lifecycle:
-👉 Data Analysis → Feature Engineering → Model Training → Evaluation → Deployment (Streamlit + AWS EC2)
-
-The best model achieves an **R² score of ~0.80**, making it reliable for real-world regression use cases.
+The project includes:
+- Data Analysis
+- Feature Engineering
+- Model Training
+- Model Evaluation
+- Web Deployment using Streamlit
+- AWS EC2 Hosting
 
 ---
 
 ## 🎯 Problem Statement
 
-Health insurance companies need to estimate medical charges for individuals based on demographic and lifestyle factors.  
-This project builds a regression model that predicts insurance costs accurately.
+Predict the medical insurance cost of an individual using demographic and lifestyle information.
 
 ---
 
-## 📊 Dataset Information
+## 📊 Dataset Features
 
-| Feature | Description |
-|--------|------------|
-| age | Age of the individual |
-| gender | Male / Female |
-| bmi | Body Mass Index |
-| children | Number of dependents |
-| smoker | Smoking status (yes/no) |
-| region | Residential area |
-| charges | Insurance cost (Target variable) |
+- age → Age of the person  
+- gender → Male / Female  
+- bmi → Body Mass Index  
+- children → Number of dependents  
+- smoker → Smoking status (yes/no)  
+- region → Residential area  
+- charges → Insurance cost (target)
 
 ---
 
-## 🔍 Project Pipeline
+## ⚙️ Workflow
 
-### 1. Exploratory Data Analysis (EDA)
-- Distribution analysis of features
-- Correlation between variables
-- Impact of smoking on insurance cost
-- BMI vs charges relationship
-- Outlier detection
+### 1. Data Analysis
+- Checked distributions and relationships
+- Found smoking and BMI strongly impact charges
 
----
-
-### 2. Data Preprocessing
-- Label encoding for categorical variables
+### 2. Preprocessing
+- Label encoding for categorical data
 - Feature scaling using StandardScaler
-- Train-test split
-
-Saved artifacts:
-- `scalar.pkl`
-- `label_encoder_gender.pkl`
-- `label_encoder_smoker.pkl`
-- `label_encoder_diabetic.pkl`
-
----
 
 ### 3. Model Training
-Models compared:
+Models tested:
 - Linear Regression
-- Random Forest Regressor
-- Gradient Boosting Regressor
+- Random Forest
+- XGBoost (Best Model)
 
-✔ Final Model: **Best performing model saved as `best_model.pkl`**
-
----
-
-### 4. Model Evaluation
-
-- **R² Score:** ~0.80  
-- MAE (Mean Absolute Error)  
-- RMSE (Root Mean Squared Error)
+### 4. Evaluation
+- R² Score: ~0.80  
+- Error metrics (MAE, RMSE)
 
 ---
 
 ## 🚀 Deployment
 
-### 💻 Streamlit Web App
-An interactive UI where users input details and get real-time insurance cost predictions.
-
-### ▶️ Run locally
+### Streamlit App
+Interactive UI where users input details and get predictions instantly.
 
 ```bash
-pip install -r requirements.txt
 streamlit run app.py
 
-
-AWS EC2 Deployment (Production)
-The application is deployed on AWS EC2 (Ubuntu Server) to make it publicly accessible.
-
-🔧 Deployment Architecture
-
-Local Machine → AWS EC2 Instance → Streamlit App → Public Internet
-
-
-## 🌐 Live Demo
-
-The app is deployed on AWS EC2 and can be accessed here:
-
-http://<YOUR_PUBLIC_IP>:8501
-
-> ⚠️ Note: The app runs on a cloud server and may stop if the instance is not running.
