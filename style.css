@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap');
+
+/* --- GLOBAL STYLES --- */
+html, body, [class*="css"] {
+    font-family: 'Sora', sans-serif;
+}
+
+.stApp {
+    background-color: #0b1c24; /* Seamless dark navy background */
+}
+
+/* --- SIDEBAR --- */
+section[data-testid="stSidebar"] {
+    background-color: #0b1c24 !important;
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+section[data-testid="stSidebar"] label {
+    color: #8fafc2 !important;
+}
+
+/* --- TITLES --- */
+h1 { color: white !important; font-weight: 700 !important; }
+p { color: #8fafc2 !important; }
+
+/* --- RESULT CARD --- */
+.result-card {
+    background: linear-gradient(135deg, #12303f 0%, #1a3a4a 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.res-label { color: #2dd4bf; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 600; }
+.res-amount { font-size: 4rem; font-weight: 600; margin: 15px 0; }
+.res-badge { background: rgba(255,255,255,0.1); padding: 6px 20px; border-radius: 50px; font-size: 0.8rem; }
+
+/* --- ANALYSIS CARDS --- */
+.info-box {
+    background: #ffffff !important;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    min-height: 250px;
+}
+
+.card-title {
+    color: #0b1c24 !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 12px;
+}
+
+/* Rows inside the Summary Card */
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.stat-row span { color: #64748b !important; font-size: 0.9rem; }
+.stat-row b { color: #0f172a !important; font-size: 0.9rem; }
+
+/* Factor Badges inside Risk Card */
+.factor {
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.factor-warn {
+    background: #fff1f2 !important;
+    color: #9f1239 !important;
+    border: 1px solid #ffe4e6;
+}
+
+.factor-ok {
+    background: #f0fdf4 !important;
+    color: #166534 !important;
+    border: 1px solid #dcfce7;
+}
+
+/* --- BUTTON --- */
+.stButton > button {
+    background: #1d9e75 !important;
+    color: white !important;
+    width: 100%;
+    border-radius: 10px !important;
+    border: none !important;
+    font-weight: 600 !important;
+    padding: 0.75rem !important;
+    transition: 0.3s;
+}
+
+.stButton > button:hover {
+    background: #25c794 !important;
+    box-shadow: 0 4px 15px rgba(29, 158, 117, 0.4);
+}
+
+/* --- UTILS --- */
+#MainMenu, footer, header { visibility: hidden; }
