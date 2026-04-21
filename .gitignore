@@ -10,3 +10,4 @@ __pycache__/
 
 # AWS key file (VERY IMPORTANT)
 *.pem
+
