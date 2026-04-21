@@ -18,7 +18,7 @@
 
 | Prediction Output |
 |:-:|
-| ![Prediction Page](images/prediction.png) |
+| ![Prediction Page](image.png) |
 
 ---
 
